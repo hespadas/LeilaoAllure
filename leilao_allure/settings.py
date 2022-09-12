@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "leilao",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -39,13 +40,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
-PROJECTS_APPS = [
-    'leilao'
-]
-
-THIRD_PARTY_APPS = []
-
-INSTALLED_APPS += PROJECTS_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -91,6 +85,7 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
+AUTH_USER_MODEL="leilao.User"
 
 AUTH_PASSWORD_VALIDATORS = [
     {
