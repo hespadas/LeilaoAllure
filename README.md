@@ -10,6 +10,8 @@ O site virtual receberá comissão de 5% sobre as vendas efetivadas;
 
 A idéia inicial é utilizar a linguagem de programação python, o framework Django e o banco de dados SQlite.
 
+Pegamos esse repositório como referencia:https://github.com/joel-jaimon/Auctions-Django-Project
+
 Nome: 	Ederson Ramos Bononi	email: Ederson.bononi@gmail.com GITHub: eramosbo30
 Nome: 	Gustavo Marinho De Andrade	email: Gustavodand@gmail.com 	GITHub: GusMarinho
 Nome: 	Henrique Espadas Paranhos	email: henriqueep@hotmail.com GITHub: henriqueespadas
