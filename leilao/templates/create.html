@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div id="produtos">
+        <h2 >Anunciar Produto</h2>
+        <form id="formulario" method="POST">
+            {% csrf_token %}
+            <input required placeholder="Nome" autofocus type="text" name="create_name"/>
+            <textarea required placeholder="Adicionar descrição" name="create_desc"></textarea>
+            <input required placeholder="Valor inicial" type="number" name="create_initial_bid"/>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}
+
+

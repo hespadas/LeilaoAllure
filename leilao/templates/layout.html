@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Leilão Allure</title>
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div id="principal">
+            <div id="cabecalho" ><h1>Leilão Allure</h1></div>
+            <div id="autenticacao">
+                {% if user.is_authenticated %}
+                    Logado como <strong>{{ user.username }}</strong>.
+                {% else %}
+                    Usuário Deslogado
+                {% endif %}
+            </div>
+            <div id="menu">
+                <ul>
+                    <li>
+                        <a href="{% url 'index' %}">Lista de Produtos</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a href="{% url 'create' %}">Anunciar Item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'winnings' %}">Suas vitórias</a>
+                        </li>
+                        <li >
+                            <a href="{% url 'logout' %}">Deslogar</a>
+                        </li>
+                    {% else %}
+                        <li >
+                            <a  href="{% url 'login' %}">Login</a>
+                        </li>
+                        <li>
+                            <a  href="{% url 'register' %}">Registrar</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        {% block body %}
+        {% endblock %}
+    </body>
+    <div id="rodape" align="center">UNICID<br> &#9993;Email:henriqueep@hotmail.com<br>git:github.com/henriqueespadas</div>
+
+</html>

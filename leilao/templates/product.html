@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div id="produtos">
+    <a class="title">{{product.name}}</a><br>
+    <div id = "productinfo">
+        <p class="description">{{ product.description }}</p>
+        <div class = "start_bid"><a><a class="c_price">Bid Atual: </a> {{ present_bid }} $ </a> </div>
+        <div class = "start_bid"><a><a class="c_price">Anunciado por: </a> {{ product.user }}</a> </div>
+        <form method="get" action = "{% url 'bid' %}">
+            <label>
+                <input name= "valor_bid" placeholder = "Valor do lance" type = "number">
+            </label>
+            <label>
+                <button class="btn btn-outline-primary" type = "submit" name = "product_id" value = {{ product.id }}>Bid Item</button>
+            </label>
+            </form>
+            <div class="valor_bid">
+            </div>
+            <div class= "fecharbid">
+            {% if product.user == request.user %}
+                <form method= "get" action = "{% url 'winner' %}">
+                <label>
+                    <button class="btn btn-outline-primary" type = "submit" value = "{{ product.id }}" name = "itemid" >Close Bid</button>
+                </label>
+        </form>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
+
+

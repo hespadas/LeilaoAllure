@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div id="produtos">
+        <h2>Seus produtos ganhos:</h2>
+        {% for item in user_winlist %}
+            <div class = "card">
+                <a class="title">{{item.bid_win_list.name}}</a>
+                <p class="desc">{{ item.bid_win_list.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
