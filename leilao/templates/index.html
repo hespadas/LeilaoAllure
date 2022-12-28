@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body %}
+<div id="produtos">
+    {% for item in active_list %}
+    <div class= "produtosativos">
+        <a>{{ item.name }}</a>
+        <p>{{ item.description }}</p>
+        <a href="{% url 'product' item.id %}">Ver Produto</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+

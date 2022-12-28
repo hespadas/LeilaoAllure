@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div id="registro">
+        <h2>Login</h2>
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <label>Usuário:
+                <input type="text" name="username" placeholder="Usuário">
+            </label>
+            <label>Password:
+                <input type="password" name="password" placeholder="Senha">
+            </label>
+            <label>
+                <input type="submit" value="Login">
+            </label>
+            {% if message %}
+                <div>{{ message }}</div>
+            {% endif %}
+            Não possui uma conta? <a href="{% url 'register' %}">Registre aqui</a>
+        </form>
+    </div>
+
+{% endblock %}

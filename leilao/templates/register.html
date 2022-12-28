@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div id="registro">
+        <h2>Registro</h2>
+        <form id=formulario action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+        <label>
+            <input  type="text" name="username" placeholder="Username">
+        </label>
+        <label>
+            <input  type="email" name="email" placeholder="Email Address">
+        </label>
+        <label>
+            <input  type="password" name="password" placeholder="Password">
+        </label>
+        <label>
+            <input  type="password" name="confirmation" placeholder="Confirm Password">
+        </label>
+        <label>
+            <input  type="submit" value="Registro">
+        </label>
+            {% if message %}
+                {{ message }}
+            {% endif %}
+        </form>
+        Já possui uma conta? <a href="{% url 'login' %}">Log aqui.</a>
+    </div>
+
+{% endblock %}
